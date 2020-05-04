@@ -1,4 +1,10 @@
 
+// msssql!123
+
+/*
+ * Bloque pgsql
+ */
+
 create user myuser1 with login password 'mypassword1';
 create user myuser2 with login password 'mypassword2';
 
@@ -37,4 +43,18 @@ create table table2 (
     table1id bigint references table1(id),
     texto text
 );
+
+/*
+ * Bloque SQLserver
+ */
+
+create database mydb1;
+create database mydb2;
+
+create login myuser1 with password = 'mypassword1'
+    , check_policy = off 
+    , default_database = mydb1;
+create user myuser1 for login myuser1;
+
+
 
